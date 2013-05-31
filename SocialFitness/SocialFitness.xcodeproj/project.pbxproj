@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1059AA131758DDA100092ADA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1059AA121758DDA100092ADA /* TableViewController.m */; };
+		4DA39D221758B9B100588FD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D211758B9B100588FD7 /* UIKit.framework */; };
+		4DA39D241758B9B100588FD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D231758B9B100588FD7 /* Foundation.framework */; };
+		4DA39D261758B9B100588FD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D251758B9B100588FD7 /* CoreGraphics.framework */; };
+		4DA39D2C1758B9B100588FD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DA39D2A1758B9B100588FD7 /* InfoPlist.strings */; };
+		4DA39D2E1758B9B100588FD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA39D2D1758B9B100588FD7 /* main.m */; };
+		4DA39D321758B9B100588FD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA39D311758B9B100588FD7 /* AppDelegate.m */; };
+		4DA39D341758B9B100588FD7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA39D331758B9B100588FD7 /* Default.png */; };
+		4DA39D361758B9B100588FD7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA39D351758B9B100588FD7 /* Default@2x.png */; };
+		4DA39D381758B9B100588FD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DA39D371758B9B100588FD7 /* Default-568h@2x.png */; };
+		4DA39D3B1758B9B100588FD7 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA39D391758B9B100588FD7 /* MainStoryboard_iPhone.storyboard */; };
+		4DA39D3E1758B9B100588FD7 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA39D3C1758B9B100588FD7 /* MainStoryboard_iPad.storyboard */; };
+		4DA39D411758B9B100588FD7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA39D401758B9B100588FD7 /* ViewController.m */; };
+		4DA39D481758B9D000588FD7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D471758B9D000588FD7 /* MapKit.framework */; };
+		4DA39D4A1758BA2400588FD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D491758BA2400588FD7 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1059AA111758DDA100092ADA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		1059AA121758DDA100092ADA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4DA39D1E1758B9B100588FD7 /* SocialFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DA39D211758B9B100588FD7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4DA39D231758B9B100588FD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4DA39D251758B9B100588FD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4DA39D291758B9B100588FD7 /* SocialFitness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialFitness-Info.plist"; sourceTree = "<group>"; };
+		4DA39D2B1758B9B100588FD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4DA39D2D1758B9B100588FD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4DA39D2F1758B9B100588FD7 /* SocialFitness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialFitness-Prefix.pch"; sourceTree = "<group>"; };
+		4DA39D301758B9B100588FD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4DA39D311758B9B100588FD7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4DA39D331758B9B100588FD7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4DA39D351758B9B100588FD7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4DA39D371758B9B100588FD7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4DA39D3A1758B9B100588FD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		4DA39D3D1758B9B100588FD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4DA39D3F1758B9B100588FD7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4DA39D401758B9B100588FD7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4DA39D471758B9D000588FD7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4DA39D491758BA2400588FD7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DA39D1B1758B9B100588FD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DA39D4A1758BA2400588FD7 /* CoreLocation.framework in Frameworks */,
+				4DA39D481758B9D000588FD7 /* MapKit.framework in Frameworks */,
+				4DA39D221758B9B100588FD7 /* UIKit.framework in Frameworks */,
+				4DA39D241758B9B100588FD7 /* Foundation.framework in Frameworks */,
+				4DA39D261758B9B100588FD7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DA39D151758B9B100588FD7 = {
+			isa = PBXGroup;
+			children = (
+				4DA39D271758B9B100588FD7 /* SocialFitness */,
+				4DA39D201758B9B100588FD7 /* Frameworks */,
+				4DA39D1F1758B9B100588FD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4DA39D1F1758B9B100588FD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DA39D1E1758B9B100588FD7 /* SocialFitness.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DA39D201758B9B100588FD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DA39D471758B9D000588FD7 /* MapKit.framework */,
+				4DA39D491758BA2400588FD7 /* CoreLocation.framework */,
+				4DA39D211758B9B100588FD7 /* UIKit.framework */,
+				4DA39D231758B9B100588FD7 /* Foundation.framework */,
+				4DA39D251758B9B100588FD7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DA39D271758B9B100588FD7 /* SocialFitness */ = {
+			isa = PBXGroup;
+			children = (
+				4DA39D301758B9B100588FD7 /* AppDelegate.h */,
+				4DA39D311758B9B100588FD7 /* AppDelegate.m */,
+				4DA39D391758B9B100588FD7 /* MainStoryboard_iPhone.storyboard */,
+				4DA39D3C1758B9B100588FD7 /* MainStoryboard_iPad.storyboard */,
+				4DA39D3F1758B9B100588FD7 /* ViewController.h */,
+				4DA39D401758B9B100588FD7 /* ViewController.m */,
+				1059AA111758DDA100092ADA /* TableViewController.h */,
+				1059AA121758DDA100092ADA /* TableViewController.m */,
+				4DA39D281758B9B100588FD7 /* Supporting Files */,
+			);
+			path = SocialFitness;
+			sourceTree = "<group>";
+		};
+		4DA39D281758B9B100588FD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DA39D291758B9B100588FD7 /* SocialFitness-Info.plist */,
+				4DA39D2A1758B9B100588FD7 /* InfoPlist.strings */,
+				4DA39D2D1758B9B100588FD7 /* main.m */,
+				4DA39D2F1758B9B100588FD7 /* SocialFitness-Prefix.pch */,
+				4DA39D331758B9B100588FD7 /* Default.png */,
+				4DA39D351758B9B100588FD7 /* Default@2x.png */,
+				4DA39D371758B9B100588FD7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DA39D1D1758B9B100588FD7 /* SocialFitness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DA39D441758B9B100588FD7 /* Build configuration list for PBXNativeTarget "SocialFitness" */;
+			buildPhases = (
+				4DA39D1A1758B9B100588FD7 /* Sources */,
+				4DA39D1B1758B9B100588FD7 /* Frameworks */,
+				4DA39D1C1758B9B100588FD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialFitness;
+			productName = SocialFitness;
+			productReference = 4DA39D1E1758B9B100588FD7 /* SocialFitness.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DA39D161758B9B100588FD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Hendrik;
+			};
+			buildConfigurationList = 4DA39D191758B9B100588FD7 /* Build configuration list for PBXProject "SocialFitness" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4DA39D151758B9B100588FD7;
+			productRefGroup = 4DA39D1F1758B9B100588FD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DA39D1D1758B9B100588FD7 /* SocialFitness */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DA39D1C1758B9B100588FD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DA39D2C1758B9B100588FD7 /* InfoPlist.strings in Resources */,
+				4DA39D341758B9B100588FD7 /* Default.png in Resources */,
+				4DA39D361758B9B100588FD7 /* Default@2x.png in Resources */,
+				4DA39D381758B9B100588FD7 /* Default-568h@2x.png in Resources */,
+				4DA39D3B1758B9B100588FD7 /* MainStoryboard_iPhone.storyboard in Resources */,
+				4DA39D3E1758B9B100588FD7 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DA39D1A1758B9B100588FD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DA39D2E1758B9B100588FD7 /* main.m in Sources */,
+				4DA39D321758B9B100588FD7 /* AppDelegate.m in Sources */,
+				4DA39D411758B9B100588FD7 /* ViewController.m in Sources */,
+				1059AA131758DDA100092ADA /* TableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4DA39D2A1758B9B100588FD7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DA39D2B1758B9B100588FD7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4DA39D391758B9B100588FD7 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DA39D3A1758B9B100588FD7 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4DA39D3C1758B9B100588FD7 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DA39D3D1758B9B100588FD7 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4DA39D421758B9B100588FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4DA39D431758B9B100588FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4DA39D451758B9B100588FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialFitness/SocialFitness-Prefix.pch";
+				INFOPLIST_FILE = "SocialFitness/SocialFitness-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4DA39D461758B9B100588FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocialFitness/SocialFitness-Prefix.pch";
+				INFOPLIST_FILE = "SocialFitness/SocialFitness-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DA39D191758B9B100588FD7 /* Build configuration list for PBXProject "SocialFitness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DA39D421758B9B100588FD7 /* Debug */,
+				4DA39D431758B9B100588FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DA39D441758B9B100588FD7 /* Build configuration list for PBXNativeTarget "SocialFitness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DA39D451758B9B100588FD7 /* Debug */,
+				4DA39D461758B9B100588FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4DA39D161758B9B100588FD7 /* Project object */;
+}
