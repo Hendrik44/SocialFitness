@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1059AA131758DDA100092ADA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1059AA121758DDA100092ADA /* TableViewController.m */; };
+		4D3C3599175BA8A5007381EA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C3598175BA8A5007381EA /* TableViewController.m */; };
 		4DA39D221758B9B100588FD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D211758B9B100588FD7 /* UIKit.framework */; };
 		4DA39D241758B9B100588FD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D231758B9B100588FD7 /* Foundation.framework */; };
 		4DA39D261758B9B100588FD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D251758B9B100588FD7 /* CoreGraphics.framework */; };
@@ -25,8 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1059AA111758DDA100092ADA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		1059AA121758DDA100092ADA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4D3C3597175BA8A5007381EA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4D3C3598175BA8A5007381EA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		4DA39D1E1758B9B100588FD7 /* SocialFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA39D211758B9B100588FD7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4DA39D231758B9B100588FD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,8 +102,8 @@
 				4DA39D3C1758B9B100588FD7 /* MainStoryboard_iPad.storyboard */,
 				4DA39D3F1758B9B100588FD7 /* ViewController.h */,
 				4DA39D401758B9B100588FD7 /* ViewController.m */,
-				1059AA111758DDA100092ADA /* TableViewController.h */,
-				1059AA121758DDA100092ADA /* TableViewController.m */,
+				4D3C3597175BA8A5007381EA /* TableViewController.h */,
+				4D3C3598175BA8A5007381EA /* TableViewController.m */,
 				4DA39D281758B9B100588FD7 /* Supporting Files */,
 			);
 			path = SocialFitness;
@@ -193,7 +193,7 @@
 				4DA39D2E1758B9B100588FD7 /* main.m in Sources */,
 				4DA39D321758B9B100588FD7 /* AppDelegate.m in Sources */,
 				4DA39D411758B9B100588FD7 /* ViewController.m in Sources */,
-				1059AA131758DDA100092ADA /* TableViewController.m in Sources */,
+				4D3C3599175BA8A5007381EA /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
