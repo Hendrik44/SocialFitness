@@ -2,7 +2,7 @@
 //  TableViewController.m
 //  SocialFitness
 //
-//  Created by Hendrik on 02.06.13.
+//  Created by Hendrik on 06.06.13.
 //  Copyright (c) 2013 Hendrik. All rights reserved.
 //
 
@@ -14,9 +14,11 @@
 
 @implementation TableViewController
 
+@synthesize data = _data;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:UITableViewStylePlain];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
@@ -26,7 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.data = [[NSMutableArray alloc] init];
+    
+    [self.data addObject:@"Route1"];
+    [self.data addObject:@"Route2"];
+    [self.data addObject:@"Route3"];
+    [self.data addObject:@"Route4"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -45,22 +52,24 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.data count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell= [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     // Configure the cell...
-    
+    cell.textLabel.text = [self.data objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -107,13 +116,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSLog(@"Geklickt auf %@",[self.data objectAtIndex:indexPath.row]);
 }
 
 @end
