@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D325DC9176223DC002548AA /* recordDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D325DC8176223DC002548AA /* recordDataController.m */; };
 		4D91F2E3175F7E120057A0FB /* BerlinBus100TTeaching.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4D91F2E2175F7E120057A0FB /* BerlinBus100TTeaching.gpx */; };
 		4D9B7825176106D300F9CDFB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B7824176106D300F9CDFB /* TableViewController.m */; };
 		4DA39D221758B9B100588FD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D211758B9B100588FD7 /* UIKit.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D325DC7176223DC002548AA /* recordDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recordDataController.h; sourceTree = "<group>"; };
+		4D325DC8176223DC002548AA /* recordDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recordDataController.m; sourceTree = "<group>"; };
 		4D91F2E2175F7E120057A0FB /* BerlinBus100TTeaching.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = BerlinBus100TTeaching.gpx; path = ../../../../../../BerlinBus100TTeaching.gpx; sourceTree = "<group>"; };
 		4D9B7823176106D300F9CDFB /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4D9B7824176106D300F9CDFB /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				4DA39D401758B9B100588FD7 /* ViewController.m */,
 				4D9B7823176106D300F9CDFB /* TableViewController.h */,
 				4D9B7824176106D300F9CDFB /* TableViewController.m */,
+				4D325DC7176223DC002548AA /* recordDataController.h */,
+				4D325DC8176223DC002548AA /* recordDataController.m */,
 				4D91F2E2175F7E120057A0FB /* BerlinBus100TTeaching.gpx */,
 				4DA39D281758B9B100588FD7 /* Supporting Files */,
 			);
@@ -198,6 +203,7 @@
 				4DA39D321758B9B100588FD7 /* AppDelegate.m in Sources */,
 				4DA39D411758B9B100588FD7 /* ViewController.m in Sources */,
 				4D9B7825176106D300F9CDFB /* TableViewController.m in Sources */,
+				4D325DC9176223DC002548AA /* recordDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

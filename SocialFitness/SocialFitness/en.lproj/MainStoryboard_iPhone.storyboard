@@ -64,7 +64,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysx-0Z-hLS">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="202" id="Fng-3v-9vQ"/>
                                     <constraint firstAttribute="height" constant="70" id="hjI-zM-IvF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -81,29 +80,30 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Routenname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gm-uu-ZOB">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="ji0-dz-UeE"/>
+                                    <constraint firstAttribute="width" constant="202" id="yPM-pI-rh6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name der Route" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnZ-Oi-EJq">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name der Route" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnZ-Oi-EJq">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="Rax-jT-eIe"/>
-                                    <constraint firstAttribute="height" constant="21" id="htO-lc-kCb"/>
+                                    <constraint firstAttribute="height" constant="56" id="Izv-yx-bzt"/>
+                                    <constraint firstAttribute="width" constant="207" id="r1l-4n-Idp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8gm-uu-ZOB" firstAttribute="centerX" secondItem="ysx-0Z-hLS" secondAttribute="centerX" type="default" id="Cmo-ey-Gv0"/>
-                            <constraint firstItem="8gm-uu-ZOB" firstAttribute="top" secondItem="4qV-GW-I9e" secondAttribute="top" constant="179" id="I42-2h-Buc"/>
+                            <constraint firstItem="8gm-uu-ZOB" firstAttribute="top" secondItem="4qV-GW-I9e" secondAttribute="top" constant="150" id="3v9-Qq-vyv"/>
+                            <constraint firstItem="TnZ-Oi-EJq" firstAttribute="leading" secondItem="8gm-uu-ZOB" secondAttribute="leading" type="default" id="B5Y-Gt-q3y"/>
+                            <constraint firstItem="8gm-uu-ZOB" firstAttribute="trailing" secondItem="ysx-0Z-hLS" secondAttribute="trailing" type="default" id="L1t-qM-iMm"/>
                             <constraint firstAttribute="bottom" secondItem="ysx-0Z-hLS" secondAttribute="bottom" constant="30" id="UBq-Iy-QOo"/>
-                            <constraint firstItem="TnZ-Oi-EJq" firstAttribute="centerX" secondItem="8gm-uu-ZOB" secondAttribute="centerX" type="default" id="dFP-vs-BqU"/>
                             <constraint firstItem="ysx-0Z-hLS" firstAttribute="centerX" secondItem="4qV-GW-I9e" secondAttribute="centerX" type="default" id="hqa-Vm-b1h"/>
-                            <constraint firstItem="TnZ-Oi-EJq" firstAttribute="top" secondItem="4qV-GW-I9e" secondAttribute="top" constant="134" id="vMz-1k-TVC"/>
+                            <constraint firstItem="TnZ-Oi-EJq" firstAttribute="top" secondItem="4qV-GW-I9e" secondAttribute="top" constant="99" id="nR5-3O-TcH"/>
+                            <constraint firstItem="ysx-0Z-hLS" firstAttribute="leading" secondItem="8gm-uu-ZOB" secondAttribute="leading" type="default" id="od1-sG-XoH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Route aufzeichnen" id="wOf-F9-5xP"/>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1067" y="-79"/>
         </scene>
-        <!--View Controller-->
+        <!--Record Data Controller-->
         <scene sceneID="RcE-cT-0Le">
             <objects>
-                <viewController id="wcP-JL-Pbv" sceneMemberID="viewController">
+                <viewController id="wcP-JL-Pbv" customClass="recordDataController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2S5-Wx-r0P">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,7 +208,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebu-17-b0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="-63"/>
+            <point key="canvasLocation" x="1645" y="-61"/>
         </scene>
         <!--View Controller - Suche-->
         <scene sceneID="Ecl-lw-Ldl">
@@ -279,6 +279,12 @@
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+        <class className="recordDataController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/recordDataController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
