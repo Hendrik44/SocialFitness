@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "TableDetailController.h"
 
 @interface TableViewController ()
 
@@ -117,6 +118,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Geklickt auf %@",[self.data objectAtIndex:indexPath.row]);
+    [self performSegueWithIdentifier:@"ShowTableDetails" sender:tableView];
 }
 
 @end
