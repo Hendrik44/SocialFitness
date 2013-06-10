@@ -13,10 +13,17 @@
 @interface recordDataController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locMgr;
-@property (nonatomic,strong) NSDate *startdate;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) MKCoordinateSpan *span;
+
+@property (nonatomic,strong) NSDate *startdate;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) IBOutlet UILabel *showTimer;
-@property (strong,nonatomic) NSUserDefaults *userdata;
-@property (nonatomic) MKCoordinateSpan *span;
+
+
+@property (nonatomic,strong) NSString *fileName;
+@property (strong, nonatomic) IBOutlet UILabel *showFileName;
+@property (nonatomic,strong) NSMutableArray *dataToSave;
+-(void)savedata:(NSString*) fileName :(NSMutableDictionary*) saveToFile;
+
 @end

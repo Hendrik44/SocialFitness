@@ -10,4 +10,9 @@
 
 @interface PrepareForRecordViewController : UIViewController
 - (IBAction)textFieldDoneEditing:(id)sender;
+- (IBAction)startRecordPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *trackName;
+
+-(NSDictionary*) loadData:(NSString*) fileName;
+
 @end

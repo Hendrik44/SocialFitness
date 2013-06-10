@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4D325DC9176223DC002548AA /* recordDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D325DC8176223DC002548AA /* recordDataController.m */; };
 		4D36CC8917636C650067D311 /* PrepareForRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D36CC8817636C650067D311 /* PrepareForRecordViewController.m */; };
-		4D91F2E3175F7E120057A0FB /* BerlinBus100TTeaching.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4D91F2E2175F7E120057A0FB /* BerlinBus100TTeaching.gpx */; };
 		4D9B7825176106D300F9CDFB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B7824176106D300F9CDFB /* TableViewController.m */; };
 		4DA39D221758B9B100588FD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D211758B9B100588FD7 /* UIKit.framework */; };
 		4DA39D241758B9B100588FD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D231758B9B100588FD7 /* Foundation.framework */; };
@@ -32,7 +31,6 @@
 		4D325DC8176223DC002548AA /* recordDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recordDataController.m; sourceTree = "<group>"; };
 		4D36CC8717636C650067D311 /* PrepareForRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareForRecordViewController.h; sourceTree = "<group>"; };
 		4D36CC8817636C650067D311 /* PrepareForRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareForRecordViewController.m; sourceTree = "<group>"; };
-		4D91F2E2175F7E120057A0FB /* BerlinBus100TTeaching.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = BerlinBus100TTeaching.gpx; path = ../../../../../../BerlinBus100TTeaching.gpx; sourceTree = "<group>"; };
 		4D9B7823176106D300F9CDFB /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4D9B7824176106D300F9CDFB /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		4DA39D1E1758B9B100588FD7 /* SocialFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,15 +106,14 @@
 				4DA39D311758B9B100588FD7 /* AppDelegate.m */,
 				4DA39D391758B9B100588FD7 /* MainStoryboard_iPhone.storyboard */,
 				4DA39D3C1758B9B100588FD7 /* MainStoryboard_iPad.storyboard */,
-				4D36CC8717636C650067D311 /* PrepareForRecordViewController.h */,
-				4D36CC8817636C650067D311 /* PrepareForRecordViewController.m */,
 				4DA39D3F1758B9B100588FD7 /* ViewController.h */,
 				4DA39D401758B9B100588FD7 /* ViewController.m */,
-				4D9B7823176106D300F9CDFB /* TableViewController.h */,
-				4D9B7824176106D300F9CDFB /* TableViewController.m */,
+				4D36CC8717636C650067D311 /* PrepareForRecordViewController.h */,
+				4D36CC8817636C650067D311 /* PrepareForRecordViewController.m */,
 				4D325DC7176223DC002548AA /* recordDataController.h */,
 				4D325DC8176223DC002548AA /* recordDataController.m */,
-				4D91F2E2175F7E120057A0FB /* BerlinBus100TTeaching.gpx */,
+				4D9B7823176106D300F9CDFB /* TableViewController.h */,
+				4D9B7824176106D300F9CDFB /* TableViewController.m */,
 				4DA39D281758B9B100588FD7 /* Supporting Files */,
 			);
 			path = SocialFitness;
@@ -193,7 +190,6 @@
 				4DA39D381758B9B100588FD7 /* Default-568h@2x.png in Resources */,
 				4DA39D3B1758B9B100588FD7 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4DA39D3E1758B9B100588FD7 /* MainStoryboard_iPad.storyboard in Resources */,
-				4D91F2E3175F7E120057A0FB /* BerlinBus100TTeaching.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
