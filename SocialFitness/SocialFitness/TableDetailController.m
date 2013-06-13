@@ -42,23 +42,23 @@
     
     positionsFromFile = [self loadRouteData:FileName];
     
-    /*
+    CLLocation *temp = positionsFromFile[0];
     MKPointAnnotation *startAnnotation = [MKPointAnnotation new];
-    startAnnotation.coordinate=CLLocationCoordinate2DMake([positionsFromFile[0] doubleValue]
-                                                          , [positionsFromFile[1] doubleValue]);
+    startAnnotation.coordinate=CLLocationCoordinate2DMake(temp.coordinate.latitude,temp.coordinate.longitude);
     startAnnotation.title=[NSString stringWithFormat:@"Start"];
     [self.mapView addAnnotation:startAnnotation];
     
     NSInteger len = [positionsFromFile count];
+    temp = positionsFromFile[len-1];
     MKPointAnnotation *stopAnnotation = [MKPointAnnotation new];
-    stopAnnotation.coordinate=CLLocationCoordinate2DMake([positionsFromFile[len-1] doubleValue],
-                                                         [positionsFromFile[len-1] doubleValue]);
+    stopAnnotation.coordinate=CLLocationCoordinate2DMake(temp.coordinate.latitude,temp.coordinate.longitude);
     stopAnnotation.title=[NSString stringWithFormat:@"Stop"];
     [self.mapView addAnnotation:stopAnnotation];
-    */
-    //self.routeLine = [MKPolyline polylineWithCoordinates: count:[positionsFromFile count]];
-    //[self.mapView setVisibleMapRect:[self.routeLine boundingMapRect]];
-    //[self.mapView addOverlay:self.routeLine];
+    
+    self.routeLine = [MKPolyline polylineWithCoordinates:(CLLocationCoordinate2D*)positionsFromFile count:1];
+    [self.mapView setVisibleMapRect:[self.routeLine boundingMapRect]];
+    [self.mapView addOverlay:self.routeLine];
+
     //self.mapView.region = MKCoordinateRegionMake(coordinateArray[0], MKCoordinateSpanMake(0.002,0.002));
 
     //_mapView.centerCoordinate = coordinateArray[0];
@@ -110,9 +110,11 @@
 {
     NSLog(@"FileName: %@",fileToOpen);
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",fileToOpen]];
+    NSString *filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",fileToOpen]];
     NSMutableDictionary *rootObject;
+    NSLog(@"filepath entpacken: %@",filePath);
     rootObject = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    NSLog(@"rootobject: %@",rootObject);
     NSArray *locations = [[NSArray alloc] init];
     if ([rootObject valueForKey:@"CLLocations"]) {
         locations = [rootObject valueForKey:@"CLLocations"];

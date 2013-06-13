@@ -129,8 +129,9 @@
     NSMutableDictionary *rootObject;
     rootObject = [NSMutableDictionary dictionary];
     
+    NSLog(@"Filepath: %@",filePath);
     [rootObject setValue:dataToSave forKey:@"CLLocations"];
-    
+    NSLog(@"rootobject for save: %@",rootObject);
     [NSKeyedArchiver archiveRootObject:rootObject toFile:filePath];   
 }
 @end
