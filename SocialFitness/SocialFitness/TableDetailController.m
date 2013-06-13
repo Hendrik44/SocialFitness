@@ -42,20 +42,29 @@
     
     positionsFromFile = [self loadRouteData:FileName];
     
-    CLLocation *temp = positionsFromFile[0];
+    NSInteger arraylen = [positionsFromFile count];
+    NSLog(@"Arraylen: %i",arraylen);
+    
+    CLLocation *temp[arraylen];
+    CLLocationCoordinate2D coordinatesForLine[arraylen];
+    
+    for (int i=0; i<arraylen; i++) {
+        temp[i]=positionsFromFile[i];
+        coordinatesForLine[i]=temp[i].coordinate;
+        
+    }
     MKPointAnnotation *startAnnotation = [MKPointAnnotation new];
-    startAnnotation.coordinate=CLLocationCoordinate2DMake(temp.coordinate.latitude,temp.coordinate.longitude);
+    startAnnotation.coordinate=CLLocationCoordinate2DMake(coordinatesForLine[0].latitude,coordinatesForLine[0].longitude);
     startAnnotation.title=[NSString stringWithFormat:@"Start"];
     [self.mapView addAnnotation:startAnnotation];
     
-    NSInteger len = [positionsFromFile count];
-    temp = positionsFromFile[len-1];
+    
     MKPointAnnotation *stopAnnotation = [MKPointAnnotation new];
-    stopAnnotation.coordinate=CLLocationCoordinate2DMake(temp.coordinate.latitude,temp.coordinate.longitude);
+    stopAnnotation.coordinate=CLLocationCoordinate2DMake(coordinatesForLine[arraylen-1].latitude,coordinatesForLine[arraylen-1].longitude);
     stopAnnotation.title=[NSString stringWithFormat:@"Stop"];
     [self.mapView addAnnotation:stopAnnotation];
     
-    self.routeLine = [MKPolyline polylineWithCoordinates:(CLLocationCoordinate2D*)positionsFromFile count:1];
+    self.routeLine = [MKPolyline polylineWithCoordinates:coordinatesForLine count:arraylen];
     [self.mapView setVisibleMapRect:[self.routeLine boundingMapRect]];
     [self.mapView addOverlay:self.routeLine];
 
@@ -64,7 +73,7 @@
     //_mapView.centerCoordinate = coordinateArray[0];
     //_mapView.showsUserLocation = YES;
     //Linie zeichnen
-    [mapView setDelegate:self];	
+    [mapView setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
