@@ -18,7 +18,7 @@
 @synthesize mapLoadIndicator;
 @synthesize routeLine;
 @synthesize routeLineView;
-@synthesize FileName = _FileName;
+@synthesize FileName;
 @synthesize positionsFromFile;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,7 +40,7 @@
 	[mapView setZoomEnabled:YES];
 	[mapView setScrollEnabled:YES];
     
-    positionsFromFile = [self loadRouteData:_FileName];
+    positionsFromFile = [self loadRouteData:FileName];
     
     /*
     MKPointAnnotation *startAnnotation = [MKPointAnnotation new];
@@ -106,10 +106,11 @@
 
 #pragma loadRouteDataFromFile
 //Positionsdaten aus file laden
--(NSArray *)loadRouteData:(NSString *)fileName
+-(NSArray *)loadRouteData:(NSString *)fileToOpen
 {
+    NSLog(@"FileName: %@",fileToOpen);
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",fileName]];
+    NSString *filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",fileToOpen]];
     NSMutableDictionary *rootObject;
     rootObject = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     NSArray *locations = [[NSArray alloc] init];

@@ -126,9 +126,10 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"startRecordRouteSegue"]) {
+    if ([segue.identifier isEqualToString:@"ShowTableDetails"]) {
         TableDetailController *svc = segue.destinationViewController;
         svc.fileName = filename;
+        //NSLog(@"Segue: svc: %@ filename:%@",svc.FileName,filename);
     }
 }
 
