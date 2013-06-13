@@ -217,15 +217,15 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" showsCancelButton="YES" id="s8L-hM-aCS">
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="TAt-HH-u3f">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
-                        </searchBar>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem systemItem="trash" id="06l-fo-uGc">
+                                    <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" textLabel="xZc-r4-RZL" detailTextLabel="dsT-Zm-Oaq" style="IBUITableViewCellStyleSubtitle" id="wje-49-UZK">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
@@ -258,6 +258,10 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Gespeicherte Routen" id="vHE-df-D6M"/>
+                    <toolbarItems/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Y0Y-xH-PP9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebu-17-b0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -284,16 +288,40 @@
                                     <action selector="backToTable:" destination="yZo-99-ufg" eventType="touchUpInside" id="l2o-fi-wNW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Routenname:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwa-Mz-eyD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aqJ-EN-jX0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="361" id="knZ-p3-EX7"/>
+                                </constraints>
+                            </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Uge-iX-bjp">
+                                <color key="color" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GUe-Yn-kuj" firstAttribute="top" secondItem="0bf-7i-6VG" secondAttribute="top" type="default" id="3ML-RL-hmf"/>
+                            <constraint firstItem="bwa-Mz-eyD" firstAttribute="top" secondItem="GUe-Yn-kuj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B7j-GA-ami"/>
+                            <constraint firstAttribute="trailing" secondItem="aqJ-EN-jX0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NDf-SQ-0eN"/>
+                            <constraint firstAttribute="bottom" secondItem="aqJ-EN-jX0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Pmg-Xw-IKG"/>
+                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="top" secondItem="bwa-Mz-eyD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PwD-ym-8o1"/>
+                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lZ4-Rt-UOC"/>
+                            <constraint firstItem="GUe-Yn-kuj" firstAttribute="centerX" secondItem="bwa-Mz-eyD" secondAttribute="centerX" type="default" id="nNo-my-VkV"/>
                             <constraint firstItem="GUe-Yn-kuj" firstAttribute="trailing" secondItem="0bf-7i-6VG" secondAttribute="trailing" type="default" id="pAI-6p-c8X"/>
+                            <constraint firstItem="Uge-iX-bjp" firstAttribute="centerY" secondItem="aqJ-EN-jX0" secondAttribute="centerY" type="default" id="sJG-oo-1MT"/>
                             <constraint firstItem="GUe-Yn-kuj" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" type="default" id="v1v-cx-QKB"/>
+                            <constraint firstItem="Uge-iX-bjp" firstAttribute="centerX" secondItem="bwa-Mz-eyD" secondAttribute="centerX" type="default" id="vMq-83-BeS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="na6-ck-wIF"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapLoadIndicator" destination="Uge-iX-bjp" id="RKL-zO-Zza"/>
+                        <outlet property="mapView" destination="aqJ-EN-jX0" id="FtI-Di-9iJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-sY-pLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,10 +365,15 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TableDetailController.h"/>
             <relationships>
                 <relationship kind="action" name="backToTable:"/>
+                <relationship kind="outlet" name="mapLoadIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="TableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewController.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

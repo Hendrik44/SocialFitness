@@ -66,7 +66,7 @@
         if ([trackName.text isEqualToString:@""])
         {
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+            [dateFormat setDateFormat:@"yyyy-MM-dd'_'HH:mm"];
             svc.fileName = [dateFormat stringFromDate:[NSDate date]];
         }
         else

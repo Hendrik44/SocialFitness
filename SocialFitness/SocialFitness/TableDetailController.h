@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface TableDetailController : UIViewController
+@interface TableDetailController : UIViewController <MKMapViewDelegate>
 - (IBAction)backToTable:(id)sender;
-
-
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *mapLoadIndicator;
+@property (nonatomic, retain) MKPolyline *routeLine; //your line
+@property (nonatomic, retain) MKPolylineView *routeLineView; //overlay view
+@property (nonatomic,strong) NSString *FileName;
+@property (nonatomic,strong) NSArray *positionsFromFile;
 @end

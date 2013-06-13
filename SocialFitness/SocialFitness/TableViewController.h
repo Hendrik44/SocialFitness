@@ -11,4 +11,5 @@
 @interface TableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray *data;
+@property (nonatomic,strong) NSString *filename;
 @end
