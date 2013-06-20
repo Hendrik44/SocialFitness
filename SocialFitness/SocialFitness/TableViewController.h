@@ -10,6 +10,9 @@
 
 @interface TableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+- (IBAction)editButtonClicked:(id)sender;
 @property (nonatomic,strong) NSMutableArray *data;
 @property (nonatomic,strong) NSString *filename;
+
 @end

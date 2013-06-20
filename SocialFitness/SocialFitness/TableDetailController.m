@@ -8,11 +8,13 @@
 
 #import "TableDetailController.h"
 
+
 @interface TableDetailController ()
 
 @end
 
 @implementation TableDetailController
+
 
 @synthesize mapView;
 @synthesize mapLoadIndicator;

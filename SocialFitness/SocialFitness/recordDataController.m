@@ -21,6 +21,7 @@
 @synthesize span;
 @synthesize fileName = _fileName;
 @synthesize dataToSave;
+@synthesize filePath = _filePath;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -124,14 +125,14 @@
 -(void)savedata:(NSString*) fileName :(NSArray*) saveToFile
 {
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",fileName]];
+    _filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",fileName]];
     
     NSMutableDictionary *rootObject;
     rootObject = [NSMutableDictionary dictionary];
     
-    NSLog(@"Filepath: %@",filePath);
+    NSLog(@"Filepath: %@",_filePath);
     [rootObject setValue:dataToSave forKey:@"CLLocations"];
     NSLog(@"rootobject for save: %@",rootObject);
-    [NSKeyedArchiver archiveRootObject:rootObject toFile:filePath];   
+    [NSKeyedArchiver archiveRootObject:rootObject toFile:_filePath];
 }
 @end

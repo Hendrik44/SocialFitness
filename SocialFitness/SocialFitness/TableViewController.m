@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "TableDetailController.h"
+#import "recordDataController.h"
 
 @interface TableViewController ()
 
@@ -17,6 +18,7 @@
 
 @synthesize data = _data;
 @synthesize filename;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -131,6 +133,36 @@
         svc.fileName = filename;
         //NSLog(@"Segue: svc: %@ filename:%@",svc.FileName,filename);
     }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        
+    filename=[self.data objectAtIndex:indexPath.row];
+    
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        [[NSFileManager defaultManager] removeItemAtPath:@"%@/Documents/%@",NSHomeDirectory(),filename error:NULL];
+        
+            [self.data removeObjectAtIndex: indexPath.row];
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            NSLog(@"loeschen erfolgreich");
+        }
+        else {
+            NSLog(@"loeschen fehlgeschlagen");
+        
+        }
+
+    
+    [self.tableView reloadData];
+}
+
+- (IBAction)editButtonClicked:(id)sender
+{
+    [self.tableView setEditing:YES animated:YES];
+    
 }
 
 @end

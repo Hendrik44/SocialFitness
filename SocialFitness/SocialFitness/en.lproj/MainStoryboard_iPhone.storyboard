@@ -223,6 +223,9 @@
                             <items>
                                 <barButtonItem systemItem="trash" id="06l-fo-uGc">
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <connections>
+                                        <action selector="editButtonClicked:" destination="x3S-XW-D8j" id="kDZ-XI-iOJ"/>
+                                    </connections>
                                 </barButtonItem>
                             </items>
                         </toolbar>
@@ -349,6 +352,48 @@
             <point key="canvasLocation" x="639" y="-85"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PrepareForRecordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrepareForRecordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startRecordPressed:"/>
+                <relationship kind="action" name="textFieldDoneEditing:"/>
+                <relationship kind="outlet" name="trackName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TableDetailController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableDetailController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToTable:"/>
+                <relationship kind="outlet" name="mapLoadIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editButtonClicked:"/>
+            </relationships>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+        <class className="recordDataController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/recordDataController.h"/>
+            <relationships>
+                <relationship kind="action" name="stop:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="showFileName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="showTimer" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

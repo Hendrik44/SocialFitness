@@ -24,6 +24,7 @@
 @property (nonatomic,strong) NSString *fileName;
 @property (strong, nonatomic) IBOutlet UILabel *showFileName;
 @property (nonatomic,strong) NSMutableArray *dataToSave;
+@property (nonatomic,strong) NSString *filePath;
 -(void)savedata:(NSString*) fileName :(NSArray*) saveToFile;
 
 @end
