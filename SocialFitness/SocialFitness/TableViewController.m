@@ -143,8 +143,8 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        
-        [[NSFileManager defaultManager] removeItemAtPath:@"%@/Documents/%@",NSHomeDirectory(),filename error:NULL];
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),filename]
+                                                   error:Nil];
         
             [self.data removeObjectAtIndex: indexPath.row];
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
