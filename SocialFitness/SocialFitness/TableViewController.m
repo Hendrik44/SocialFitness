@@ -4,7 +4,7 @@
 //
 //  Created by Hendrik on 06.06.13.
 //  Copyright (c) 2013 Hendrik. All rights reserved.
-//
+//http://www.techrepublic.com/blog/ios-app-builder/ios-6-best-practices-introducing-the-uirefreshcontrol/314
 
 #import "TableViewController.h"
 #import "TableDetailController.h"
@@ -15,9 +15,15 @@
 @end
 
 @implementation TableViewController
+{
+    int i;
+}
 
 @synthesize data = _data;
 @synthesize filename;
+
+
+
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -31,7 +37,10 @@
 
 - (void)viewDidLoad
 {
+    i = 0;
     [super viewDidLoad];
+    [self setupRefreshControl];
+
     self.data = [[NSMutableArray alloc] initWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]];
     
     NSLog(@"%@",[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]);
@@ -46,6 +55,52 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)setupRefreshControl
+{
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
+    
+    [refreshControl addTarget:self action:@selector(refreshControlRequest)forControlEvents:UIControlEventValueChanged];
+    
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating data"];
+    
+    
+    [self setRefreshControl:refreshControl];
+}
+
+
+- (void)refreshControlRequest {
+    // do something here to refresh.
+    NSLog(@"refreshControlRequest!!!");
+    
+   [self performSelector:@selector(updateTableView)withObject:nil];
+    
+}
+
+- (void)updateTableView
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MMM d, h:mm:ss a"];
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
+    
+    self.data = [[NSMutableArray alloc] initWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]];
+    NSLog(@"%@",[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]);
+
+    
+    
+    NSLog(@"update geht");
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+    
+    
+    
+    
+    [self.refreshControl endRefreshing];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -161,7 +216,19 @@
 
 - (IBAction)editButtonClicked:(id)sender
 {
-    [self.tableView setEditing:YES animated:YES];
+
+
+    if (i == 0) {
+        [self.tableView setEditing:YES animated:YES];
+        i = 1;
+    } else {
+    
+        [self.tableView setEditing:NO animated:YES];
+        i = 0;
+    }
+
+        
+    
     
 }
 

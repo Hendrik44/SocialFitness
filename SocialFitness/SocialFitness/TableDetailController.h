@@ -17,4 +17,5 @@
 @property (nonatomic, retain) MKPolylineView *routeLineView; //overlay view
 @property (nonatomic,strong) NSString *FileName;
 @property (nonatomic,strong) NSArray *positionsFromFile;
+@property (strong, nonatomic) IBOutlet UILabel *showFileName;
 @end

@@ -34,6 +34,8 @@
 
 - (void)viewDidLoad
 {
+
+    self.showFileName.text = FileName;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.mapLoadIndicator.hidesWhenStopped = YES;
