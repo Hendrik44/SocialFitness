@@ -265,6 +265,9 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ip6-WT-ZbM">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="DataTableVIew" destination="ldf-NS-cWW" id="Ana-qy-D4j"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebu-17-b0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -391,6 +394,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewController.h"/>
             <relationships>
                 <relationship kind="action" name="editButtonClicked:"/>
+                <relationship kind="outlet" name="DataTableVIew" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="UIRefreshControl" superclassName="UIControl">

@@ -17,6 +17,7 @@
 - (void)refreshControlRequest;
 - (void)updateTableView;
 
+@property (strong, nonatomic) IBOutlet UITableView *DataTableVIew;
 @property (nonatomic,strong) NSMutableArray *data;
 @property (nonatomic,strong) NSString *filename;
 

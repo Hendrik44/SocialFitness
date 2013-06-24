@@ -125,7 +125,7 @@
 -(void)savedata:(NSString*) fileName :(NSArray*) saveToFile
 {
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    _filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",fileName]];
+    _filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",fileName]];
     
     NSMutableDictionary *rootObject;
     rootObject = [NSMutableDictionary dictionary];

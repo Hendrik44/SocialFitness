@@ -21,10 +21,7 @@
 
 @synthesize data = _data;
 @synthesize filename;
-
-
-
-
+@synthesize DataTableVIew;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,7 +41,8 @@
     self.data = [[NSMutableArray alloc] initWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]];
     
     NSLog(@"%@",[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]);
-        /*
+    /*
+     Testdaten
     [self.data addObject:@"Route1"];
     [self.data addObject:@"Route2"];
     [self.data addObject:@"Route3"];
@@ -58,17 +56,12 @@
 
 - (void)setupRefreshControl
 {
-    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
-    
-    [refreshControl addTarget:self action:@selector(refreshControlRequest)forControlEvents:UIControlEventValueChanged];
-    
+    [refreshControl addTarget:self
+                       action:@selector(refreshControlRequest)forControlEvents:UIControlEventValueChanged];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating data"];
-    
-    
     [self setRefreshControl:refreshControl];
 }
-
 
 - (void)refreshControlRequest {
     // do something here to refresh.
@@ -88,17 +81,10 @@
     self.data = [[NSMutableArray alloc] initWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]];
     NSLog(@"%@",[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]);
 
-    
-    
     NSLog(@"update geht");
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
-    
-    
-    
-    
     [self.refreshControl endRefreshing];
-    
-    
+    [DataTableVIew reloadData];
 }
 
 
@@ -198,8 +184,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),filename]
-                                                   error:Nil];
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),filename] error:Nil];
         
             [self.data removeObjectAtIndex: indexPath.row];
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -207,29 +192,21 @@
         }
         else {
             NSLog(@"loeschen fehlgeschlagen");
-        
         }
-
-    
     [self.tableView reloadData];
 }
 
 - (IBAction)editButtonClicked:(id)sender
 {
-
-
-    if (i == 0) {
+    if (i == 0)
+    {
         [self.tableView setEditing:YES animated:YES];
         i = 1;
-    } else {
-    
+    }
+    else
+    {
         [self.tableView setEditing:NO animated:YES];
         i = 0;
     }
-
-        
-    
-    
 }
-
 @end
