@@ -4,7 +4,6 @@
 //
 //  Created by Hendrik on 06.06.13.
 //  Copyright (c) 2013 Hendrik. All rights reserved.
-//http://www.techrepublic.com/blog/ios-app-builder/ios-6-best-practices-introducing-the-uirefreshcontrol/314
 
 #import "TableViewController.h"
 #import "TableDetailController.h"
@@ -16,6 +15,7 @@
 
 @implementation TableViewController
 {
+    //IndexVariable zur Unterscheidung ob Delete Button aktiv ist
     int i;
 }
 
@@ -23,37 +23,29 @@
 @synthesize filename;
 @synthesize DataTableVIew;
 
+//Table View style Initalisierung
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
+//Files on Data laden aus Documents
 - (void)viewDidLoad
 {
     i = 0;
     [super viewDidLoad];
+    //refresh der Zellen bei erst Aufruf
     [self setupRefreshControl];
 
     self.data = [[NSMutableArray alloc] initWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]];
     
     NSLog(@"%@",[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@/Documents/",NSHomeDirectory()] error:nil]);
-    /*
-     Testdaten
-    [self.data addObject:@"Route1"];
-    [self.data addObject:@"Route2"];
-    [self.data addObject:@"Route3"];
-    [self.data addObject:@"Route4"];*/
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+   }
 
+//Wenn aktualisiert werden soll wird refeshControlRequest aufgerufen
 - (void)setupRefreshControl
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
@@ -63,14 +55,15 @@
     [self setRefreshControl:refreshControl];
 }
 
+//methode ruft updateTableView auf zum Updaten des TableView inhaltes
 - (void)refreshControlRequest {
-    // do something here to refresh.
     NSLog(@"refreshControlRequest!!!");
     
    [self performSelector:@selector(updateTableView)withObject:nil];
     
 }
 
+//TableView data wird neu geladen und der Zeitpunkt gespeichert
 - (void)updateTableView
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
@@ -102,12 +95,14 @@
     return 1;
 }
 
+//durchzählen der Zellen, vorgabe für den Table View
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return [self.data count];
 }
 
+//Jeder Filename wird in je enine Zelle eingetragen
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -120,47 +115,10 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
-
+//Filename festlegen und Segue festlegen
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Geklickt auf %@",[self.data objectAtIndex:indexPath.row]);
@@ -168,6 +126,7 @@
     [self performSegueWithIdentifier:@"ShowTableDetails" sender:tableView];
 }
 
+//bei klicken der Zelle neuen View festlegen
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"ShowTableDetails"]) {
         TableDetailController *svc = segue.destinationViewController;
@@ -176,6 +135,7 @@
     }
 }
 
+//methode zum löschen der Zelle und des Files
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
         
@@ -196,6 +156,7 @@
     [self.tableView reloadData];
 }
 
+//Delete Button aktivieren oder deaktivieren zum löschen
 - (IBAction)editButtonClicked:(id)sender
 {
     if (i == 0)
