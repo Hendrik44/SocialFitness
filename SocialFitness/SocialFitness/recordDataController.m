@@ -52,6 +52,10 @@
     //[NSUserDefaults init];
 	// Do any additional setup after loading the view.
 }
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self stopRecording];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -66,42 +70,7 @@
     [showTimer setText:[NSString stringWithFormat:@"%.0fs",-[startdate timeIntervalSinceNow]]];
 }
 - (IBAction)stop:(id)sender {
-    [self.locMgr stopUpdatingLocation];
-    [self.timer invalidate];
-    self.timer= nil;
-    
-    for (id obj in dataToSave){
-        CLLocation *standort = obj;
-        NSLog(@"\nZeitstempel: %@\nLatitue: %g\nLongitute: %g\n\n", standort.timestamp,standort.coordinate.latitude,standort.coordinate.longitude);
-        
-    }
-    
-    /* Testdaten schreiben
-    [self savedata:@"Test" :[[NSArray alloc]initWithObjects:@"9.91437",@"78.11418",
-                             @"9.91825",@"78.11357",
-                             @"9.91973",@"78.12013",
-                             @"52.53856",@"13.3515",
-                             @"52.53753",@"13.35972",
-                             @"52.538",@"13.35788",
-                             @"52.53844",@"13.35633",
-                             @"52.53895",@"13.35392",
-                             @"52.53813",@"13.34925",
-                             @"52.53794",@"13.34667",
-                             @"52.53815",@"13.34504",
-                             @"52.5369",@"13.35938",
-                             nil]
-     ];*/
-    /*
-     dataToSave-Array: (
-     "<+52.50671406,+13.33283424> +/- 5.00m (speed -1.00 mps / course -1.00) @ 6/13/13, 3:11:52 PM Central European Summer Time",
-     "<+52.50649300,+13.33258200> +/- 5.00m (speed -1.00 mps / course -1.00) @ 6/13/13, 3:11:54 PM Central European Summer Time",
-     "<+52.50625900,+13.33229100> +/- 5.00m (speed -1.00 mps / course -1.00) @ 6/13/13, 3:11:55 PM Central European Summer Time"
-     )
-     */
-    //[self savedata:_fileName :[[NSArray alloc] initWithArray:dataToSave]];
-    
-    NSLog(@"dataToSave-Array: %@",dataToSave);
-    [self savedata:_fileName :dataToSave];
+    [self stopRecording];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -134,5 +103,45 @@
     [rootObject setValue:dataToSave forKey:@"CLLocations"];
     NSLog(@"rootobject for save: %@",rootObject);
     [NSKeyedArchiver archiveRootObject:rootObject toFile:_filePath];
+}
+
+-(void)stopRecording
+{
+    [self.locMgr stopUpdatingLocation];
+    [self.timer invalidate];
+    self.timer= nil;
+    
+    for (id obj in dataToSave){
+        CLLocation *standort = obj;
+        NSLog(@"\nZeitstempel: %@\nLatitue: %g\nLongitute: %g\n\n", standort.timestamp,standort.coordinate.latitude,standort.coordinate.longitude);
+        
+    }
+    
+    /* Testdaten schreiben
+     [self savedata:@"Test" :[[NSArray alloc]initWithObjects:@"9.91437",@"78.11418",
+     @"9.91825",@"78.11357",
+     @"9.91973",@"78.12013",
+     @"52.53856",@"13.3515",
+     @"52.53753",@"13.35972",
+     @"52.538",@"13.35788",
+     @"52.53844",@"13.35633",
+     @"52.53895",@"13.35392",
+     @"52.53813",@"13.34925",
+     @"52.53794",@"13.34667",
+     @"52.53815",@"13.34504",
+     @"52.5369",@"13.35938",
+     nil]
+     ];*/
+    /*
+     dataToSave-Array: (
+     "<+52.50671406,+13.33283424> +/- 5.00m (speed -1.00 mps / course -1.00) @ 6/13/13, 3:11:52 PM Central European Summer Time",
+     "<+52.50649300,+13.33258200> +/- 5.00m (speed -1.00 mps / course -1.00) @ 6/13/13, 3:11:54 PM Central European Summer Time",
+     "<+52.50625900,+13.33229100> +/- 5.00m (speed -1.00 mps / course -1.00) @ 6/13/13, 3:11:55 PM Central European Summer Time"
+     )
+     */
+    //[self savedata:_fileName :[[NSArray alloc] initWithArray:dataToSave]];
+    
+    NSLog(@"dataToSave-Array: %@",dataToSave);
+    [self savedata:_fileName :dataToSave];
 }
 @end
