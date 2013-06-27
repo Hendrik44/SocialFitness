@@ -39,19 +39,20 @@
     dataToSave = [[NSMutableArray alloc] init];
     
     [self.locMgr setDelegate:self];
-    [[self locMgr] setDistanceFilter:10.0f];
-    [[self locMgr] setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(tick:) userInfo:nil repeats:YES];
-    startdate = [NSDate date];
+    [[self locMgr] setDistanceFilter:10.0f];//update alle 10m
+    [[self locMgr] setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];//Genauigkeit von 10m
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(tick:) userInfo:nil repeats:YES];//
+    startdate = [NSDate date];//hole aktuelles Datum
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.zoomEnabled = YES;
     self.mapView.scrollEnabled = NO;
-    self.showFileName.text = _fileName;
+    self.showFileName.text = _fileName;//setze filename
     [locMgr startUpdatingLocation];
     //[NSUserDefaults init];
 	// Do any additional setup after loading the view.
 }
+//beim Verlassen der View Aufnahme stoppen
 -(void)viewDidDisappear:(BOOL)animated
 {
     [self stopRecording];
@@ -65,10 +66,10 @@
 
 -(void) tick: (NSTimer*) theTimer
 {
-    //[showTimer setText:[NSString stringWithFormat:@"%@",[NSDate dateWithTimeInterval:1 sinceDate:startdate]]]
-    
+    //Gebe Timer UILabel aus
     [showTimer setText:[NSString stringWithFormat:@"%.0fs",-[startdate timeIntervalSinceNow]]];
 }
+//Aufnahme stoppen
 - (IBAction)stop:(id)sender {
     [self stopRecording];
 }
@@ -91,8 +92,10 @@
     [self.mapView setCenterCoordinate:newLocation.coordinate];
     
 }
+//Methode zum Speichern der aufgezeichneten Locations
 -(void)savedata:(NSString*) fileName :(NSArray*) saveToFile
 {
+    //speichere Daten im root/Documents Verzeichnis der App
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     _filePath    = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",fileName]];
     
@@ -105,16 +108,17 @@
     [NSKeyedArchiver archiveRootObject:rootObject toFile:_filePath];
 }
 
+//Mehtode zum Stoppen der Aufzeichnung
 -(void)stopRecording
 {
-    [self.locMgr stopUpdatingLocation];
-    [self.timer invalidate];
+    [self.locMgr stopUpdatingLocation];//beende Erfassung von Standortänderung
+    [self.timer invalidate];//stoppe Timer
     self.timer= nil;
     
+    //Testausgabe der gespeicherten CLLoactions
     for (id obj in dataToSave){
         CLLocation *standort = obj;
         NSLog(@"\nZeitstempel: %@\nLatitue: %g\nLongitute: %g\n\n", standort.timestamp,standort.coordinate.latitude,standort.coordinate.longitude);
-        
     }
     
     /* Testdaten schreiben
@@ -142,6 +146,7 @@
     //[self savedata:_fileName :[[NSArray alloc] initWithArray:dataToSave]];
     
     NSLog(@"dataToSave-Array: %@",dataToSave);
+    //Rufe Methode zum Speichern der Daten auf
     [self savedata:_fileName :dataToSave];
 }
 @end

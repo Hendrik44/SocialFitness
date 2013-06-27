@@ -42,6 +42,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//blendet die Tastatur aus bei enter
 - (IBAction)textFieldDoneEditing:(id)sender{
     //Tastur ausblenden
     [sender resignFirstResponder];
@@ -53,22 +55,19 @@
 
 }
 
--(NSDictionary*) loadData:(NSString*) fileName
-{
-    NSDictionary* loadDataDic = [[NSDictionary alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/%@",
-                                                                              NSHomeDirectory(),fileName]];
-    return loadDataDic;
-}
-
+//wird bei aufruf des segue ausgeführt
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"startRecordRouteSegue"]) {
         recordDataController *svc = segue.destinationViewController;
+        
+        //keine Angabe filename = Zeitstempel als filename
         if ([trackName.text isEqualToString:@""])
         {
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
             [dateFormat setDateFormat:@"yyyy-MM-dd'_'HH:mm"];
             svc.fileName = [dateFormat stringFromDate:[NSDate date]];
         }
+        //wenn Name angegeben, dann nimm filename
         else
         {
             svc.fileName = trackName.text;

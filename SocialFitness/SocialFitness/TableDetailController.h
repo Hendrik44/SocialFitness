@@ -13,8 +13,8 @@
 - (IBAction)backToTable:(id)sender;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *mapLoadIndicator;
-@property (nonatomic, retain) MKPolyline *routeLine; //your line
-@property (nonatomic, retain) MKPolylineView *routeLineView; //overlay view
+@property (nonatomic, retain) MKPolyline *routeLine; //für Linie zwischen Start und Stop
+@property (nonatomic, retain) MKPolylineView *routeLineView; //View zur Anzeige von Polyline
 @property (nonatomic,strong) NSString *FileName;
 @property (nonatomic,strong) NSArray *positionsFromFile;
 @property (strong, nonatomic) IBOutlet UILabel *showFileName;

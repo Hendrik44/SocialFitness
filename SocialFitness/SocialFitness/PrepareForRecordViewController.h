@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PrepareForRecordViewController : UIViewController
-- (IBAction)textFieldDoneEditing:(id)sender;
-- (IBAction)startRecordPressed:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextField *trackName;
-
--(NSDictionary*) loadData:(NSString*) fileName;
+- (IBAction)textFieldDoneEditing:(id)sender;//dient zum schließen der Tastatur bei erfolgter Eingabe
+- (IBAction)startRecordPressed:(id)sender;//Startet Routenaufzeichnung und öffnet recordDataView
+@property (strong, nonatomic) IBOutlet UITextField *trackName;//Möglichkeit der Bennenung der zu speichernden Route
 
 @end

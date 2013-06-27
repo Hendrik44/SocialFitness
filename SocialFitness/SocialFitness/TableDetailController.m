@@ -40,11 +40,11 @@
 	// Do any additional setup after loading the view.
     self.mapLoadIndicator.hidesWhenStopped = YES;
     
-    [mapView setMapType:MKMapTypeStandard];
-	[mapView setZoomEnabled:YES];
-	[mapView setScrollEnabled:YES];
+    [mapView setMapType:MKMapTypeStandard];//setzte Map-Typ auf Kartenansicht
+	[mapView setZoomEnabled:YES];//Erlaube Zoom
+	[mapView setScrollEnabled:YES];//Erlaube srollen der Karte
     
-    positionsFromFile = [self loadRouteData:FileName];
+    positionsFromFile = [self loadRouteData:FileName];//Einlesen der postion aus file über Methode loadRouteData
     
     NSInteger arraylen = [positionsFromFile count];
     NSLog(@"Arraylen: %i",arraylen);
@@ -86,6 +86,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//schließe View
 - (IBAction)backToTable:(id)sender {
     [self dismissViewControllerAnimated:YES completion:Nil];
 }
@@ -96,7 +97,6 @@
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
     [self.mapLoadIndicator stopAnimating];
-    //self.mapView.centerCoordinate=CLLocationCoordinate2DMake(2.506714, 13.332834);
 }
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
