@@ -34,8 +34,7 @@
 
 - (void)viewDidLoad
 {
-
-    self.showFileName.text = FileName;
+    self.ControllBar.topItem.title= FileName;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.mapLoadIndicator.hidesWhenStopped = YES;
@@ -134,5 +133,20 @@
     }
     NSLog(@"LocationsfromFile: %@",locations);
     return locations;
+}
+- (IBAction)sharePressed:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@""];
+        UIGraphicsBeginImageContextWithOptions(mapView.frame.size, NO, 0.0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [[mapView layer] renderInContext:context];
+        UIImage *tweetImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        [tweetSheet addImage:tweetImage];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
 }
 @end

@@ -23,7 +23,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sPs-KA-g7b" firstAttribute="centerX" secondItem="DIo-cz-xvq" secondAttribute="centerX" type="default" id="HMI-eF-qed"/>
+                            <constraint firstItem="sPs-KA-g7b" firstAttribute="centerX" secondItem="DIo-cz-xvq" secondAttribute="centerX" type="default" id="qoR-Sh-olY"/>
                             <constraint firstItem="sPs-KA-g7b" firstAttribute="top" secondItem="DIo-cz-xvq" secondAttribute="top" constant="20" symbolic="YES" type="default" id="yi6-UN-EMZ"/>
                         </constraints>
                     </view>
@@ -274,66 +274,49 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUe-Yn-kuj">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="zurück">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backToTable:" destination="yZo-99-ufg" eventType="touchUpInside" id="l2o-fi-wNW"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Routenname:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwa-Mz-eyD">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="heV-ZN-2Hq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aqJ-EN-jX0">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="361" id="knZ-p3-EX7"/>
+                                    <constraint firstAttribute="width" constant="306" id="FUd-Vr-XOn"/>
+                                    <constraint firstAttribute="height" constant="401" id="Sdf-MY-LOp"/>
                                 </constraints>
                             </mapView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Uge-iX-bjp">
                                 <color key="color" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ9-WB-QCU">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="mgc-Tj-dEq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-Oc-7Hp">
+                                <items>
+                                    <navigationItem title="Title" id="wkC-ib-bS0">
+                                        <barButtonItem key="leftBarButtonItem" title="zurück" id="37R-4x-mpY">
+                                            <connections>
+                                                <action selector="backToTable:" destination="yZo-99-ufg" id="6ne-It-tYz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="D0I-bE-DSB">
+                                            <connections>
+                                                <action selector="sharePressed:" destination="yZo-99-ufg" id="aFl-gw-Nkw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bwa-Mz-eyD" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0PU-gd-KgX"/>
-                            <constraint firstItem="bwa-Mz-eyD" firstAttribute="top" secondItem="GUe-Yn-kuj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B7j-GA-ami"/>
-                            <constraint firstAttribute="trailing" secondItem="aqJ-EN-jX0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NDf-SQ-0eN"/>
-                            <constraint firstItem="GUe-Yn-kuj" firstAttribute="centerX" secondItem="Uge-iX-bjp" secondAttribute="centerX" type="default" id="POP-zq-HZf"/>
-                            <constraint firstAttribute="bottom" secondItem="aqJ-EN-jX0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Pmg-Xw-IKG"/>
-                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="top" secondItem="bwa-Mz-eyD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PwD-ym-8o1"/>
-                            <constraint firstAttribute="trailing" secondItem="jQ9-WB-QCU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ddB-cc-TH6"/>
-                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lZ4-Rt-UOC"/>
-                            <constraint firstItem="GUe-Yn-kuj" firstAttribute="trailing" secondItem="0bf-7i-6VG" secondAttribute="trailing" type="default" id="pAI-6p-c8X"/>
-                            <constraint firstItem="jQ9-WB-QCU" firstAttribute="baseline" secondItem="bwa-Mz-eyD" secondAttribute="baseline" type="default" id="qDo-FH-GK4"/>
-                            <constraint firstItem="Uge-iX-bjp" firstAttribute="centerY" secondItem="aqJ-EN-jX0" secondAttribute="centerY" type="default" id="sJG-oo-1MT"/>
-                            <constraint firstItem="GUe-Yn-kuj" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" type="default" id="v1v-cx-QKB"/>
+                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="top" secondItem="0bf-7i-6VG" secondAttribute="top" constant="52" id="8ik-dm-aRX"/>
+                            <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="top" secondItem="0bf-7i-6VG" secondAttribute="top" type="default" id="Vhm-Ml-cnk"/>
+                            <constraint firstAttribute="bottom" secondItem="Uge-iX-bjp" secondAttribute="bottom" constant="182" id="cWG-dF-hix"/>
+                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" constant="8" id="h88-6D-j3J"/>
+                            <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="centerX" secondItem="Uge-iX-bjp" secondAttribute="centerX" type="default" id="nI2-ck-F5c"/>
+                            <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" type="default" id="xT4-mG-QAJ"/>
+                            <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="trailing" secondItem="0bf-7i-6VG" secondAttribute="trailing" type="default" id="xcT-DD-lRb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="na6-ck-wIF"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ControllBar" destination="Rjd-Oc-7Hp" id="PX3-um-MRt"/>
                         <outlet property="mapLoadIndicator" destination="Uge-iX-bjp" id="RKL-zO-Zza"/>
                         <outlet property="mapView" destination="aqJ-EN-jX0" id="FtI-Di-9iJ"/>
-                        <outlet property="showFileName" destination="jQ9-WB-QCU" id="aQ1-kU-a3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-sY-pLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,9 +361,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TableDetailController.h"/>
             <relationships>
                 <relationship kind="action" name="backToTable:"/>
+                <relationship kind="action" name="sharePressed:"/>
+                <relationship kind="outlet" name="ControllBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="mapLoadIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="showFileName" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TableViewController" superclassName="UITableViewController">

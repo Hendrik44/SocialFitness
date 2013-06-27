@@ -25,6 +25,8 @@
 		4DA39D481758B9D000588FD7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D471758B9D000588FD7 /* MapKit.framework */; };
 		4DA39D4A1758BA2400588FD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA39D491758BA2400588FD7 /* CoreLocation.framework */; };
 		4DCCF66C176624DA00E15F88 /* TableDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF66B176624DA00E15F88 /* TableDetailController.m */; };
+		4DE245AC177CB78500A62D7C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE245AB177CB78500A62D7C /* Social.framework */; };
+		4DE245AE177CBD3900A62D7C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE245AD177CBD3900A62D7C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		4DA39D491758BA2400588FD7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DCCF66A176624DA00E15F88 /* TableDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableDetailController.h; sourceTree = "<group>"; };
 		4DCCF66B176624DA00E15F88 /* TableDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableDetailController.m; sourceTree = "<group>"; };
+		4DE245AB177CB78500A62D7C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4DE245AD177CBD3900A62D7C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE245AE177CBD3900A62D7C /* QuartzCore.framework in Frameworks */,
+				4DE245AC177CB78500A62D7C /* Social.framework in Frameworks */,
 				4DA39D4A1758BA2400588FD7 /* CoreLocation.framework in Frameworks */,
 				4DA39D481758B9D000588FD7 /* MapKit.framework in Frameworks */,
 				4DA39D221758B9B100588FD7 /* UIKit.framework in Frameworks */,
@@ -93,6 +99,8 @@
 		4DA39D201758B9B100588FD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DE245AD177CBD3900A62D7C /* QuartzCore.framework */,
+				4DE245AB177CB78500A62D7C /* Social.framework */,
 				4DA39D471758B9D000588FD7 /* MapKit.framework */,
 				4DA39D491758BA2400588FD7 /* CoreLocation.framework */,
 				4DA39D211758B9B100588FD7 /* UIKit.framework */,
