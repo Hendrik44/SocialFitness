@@ -281,9 +281,10 @@
                                 </constraints>
                             </mapView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Uge-iX-bjp">
-                                <color key="color" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-Oc-7Hp">
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-Oc-7Hp">
                                 <items>
                                     <navigationItem title="Title" id="wkC-ib-bS0">
                                         <barButtonItem key="leftBarButtonItem" title="zurück" id="37R-4x-mpY">
@@ -302,10 +303,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="top" secondItem="0bf-7i-6VG" secondAttribute="top" constant="52" id="8ik-dm-aRX"/>
+                            <constraint firstItem="Uge-iX-bjp" firstAttribute="centerX" secondItem="aqJ-EN-jX0" secondAttribute="centerX" type="default" id="LrC-Vy-hns"/>
                             <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="top" secondItem="0bf-7i-6VG" secondAttribute="top" type="default" id="Vhm-Ml-cnk"/>
-                            <constraint firstAttribute="bottom" secondItem="Uge-iX-bjp" secondAttribute="bottom" constant="182" id="cWG-dF-hix"/>
-                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" constant="8" id="h88-6D-j3J"/>
+                            <constraint firstItem="aqJ-EN-jX0" firstAttribute="top" secondItem="0bf-7i-6VG" secondAttribute="top" constant="52" id="Wm1-6A-mmW"/>
+                            <constraint firstAttribute="bottom" secondItem="Uge-iX-bjp" secondAttribute="bottom" constant="182" id="foY-dy-CDC"/>
                             <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="centerX" secondItem="Uge-iX-bjp" secondAttribute="centerX" type="default" id="nI2-ck-F5c"/>
                             <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="leading" secondItem="0bf-7i-6VG" secondAttribute="leading" type="default" id="xT4-mG-QAJ"/>
                             <constraint firstItem="Rjd-Oc-7Hp" firstAttribute="trailing" secondItem="0bf-7i-6VG" secondAttribute="trailing" type="default" id="xcT-DD-lRb"/>

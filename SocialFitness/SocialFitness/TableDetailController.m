@@ -34,10 +34,10 @@
 
 - (void)viewDidLoad
 {
-    self.ControllBar.topItem.title= FileName;
+    self.ControllBar.topItem.title= FileName;//setzte Title auf Dateinamen
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.mapLoadIndicator.hidesWhenStopped = YES;
+    self.mapLoadIndicator.hidesWhenStopped = YES;//verstecke loadindicator
     
     [mapView setMapType:MKMapTypeStandard];//setzte Map-Typ auf Kartenansicht
 	[mapView setZoomEnabled:YES];//Erlaube Zoom
@@ -51,22 +51,25 @@
     CLLocation *temp[arraylen];
     CLLocationCoordinate2D coordinatesForLine[arraylen];
     
+    //speichere eingelesene Positionsdaten in CLLocations-Array
     for (int i=0; i<arraylen; i++) {
         temp[i]=positionsFromFile[i];
         coordinatesForLine[i]=temp[i].coordinate;
         
     }
+    //setzte Stecknadel für den Startpunkt
     MKPointAnnotation *startAnnotation = [MKPointAnnotation new];
     startAnnotation.coordinate=CLLocationCoordinate2DMake(coordinatesForLine[0].latitude,coordinatesForLine[0].longitude);
     startAnnotation.title=[NSString stringWithFormat:@"Start"];
     [self.mapView addAnnotation:startAnnotation];
     
-    
+    //setzte Stecknadel für den Stoppunkt
     MKPointAnnotation *stopAnnotation = [MKPointAnnotation new];
     stopAnnotation.coordinate=CLLocationCoordinate2DMake(coordinatesForLine[arraylen-1].latitude,coordinatesForLine[arraylen-1].longitude);
     stopAnnotation.title=[NSString stringWithFormat:@"Stop"];
     [self.mapView addAnnotation:stopAnnotation];
     
+    //zeichne Line zwischen den Positionen
     self.routeLine = [MKPolyline polylineWithCoordinates:coordinatesForLine count:arraylen];
     [self.mapView setVisibleMapRect:[self.routeLine boundingMapRect]];
     [self.mapView addOverlay:self.routeLine];
@@ -89,7 +92,8 @@
 - (IBAction)backToTable:(id)sender {
     [self dismissViewControllerAnimated:YES completion:Nil];
 }
-- (void)mapViewDidStopLocatingUser:(MKMapView *)mapView
+
+-(void)mapViewWillStartLoadingMap:(MKMapView *)mapView
 {
     [self.mapLoadIndicator startAnimating];
 }
@@ -97,6 +101,8 @@
 {
     [self.mapLoadIndicator stopAnimating];
 }
+
+//Methode zum anzeigen des Overlay für die Linie zwischen den Positionen
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
     if(overlay == self.routeLine)
@@ -134,6 +140,8 @@
     NSLog(@"LocationsfromFile: %@",locations);
     return locations;
 }
+//Methode zum tweet
+//MKMapview wird in UiImage konvertiert und an den Tweet gehängt
 - (IBAction)sharePressed:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
