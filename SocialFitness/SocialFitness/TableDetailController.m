@@ -156,5 +156,10 @@
         [tweetSheet addImage:tweetImage];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
+    else{
+        UIAlertView *hinweis = [[UIAlertView alloc]initWithTitle:@"Fehler" message:@"Teilen nicht möglich! Bitte Account für Twitter einrichten!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [hinweis show];
+
+    }
 }
 @end
