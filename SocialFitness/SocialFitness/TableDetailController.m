@@ -143,23 +143,52 @@
 //Methode zum tweet
 //MKMapview wird in UiImage konvertiert und an den Tweet gehängt
 - (IBAction)sharePressed:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
-        SLComposeViewController *tweetSheet = [SLComposeViewController
-                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@""];
-        UIGraphicsBeginImageContextWithOptions(mapView.frame.size, NO, 0.0);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        [[mapView layer] renderInContext:context];
-        UIImage *tweetImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        [tweetSheet addImage:tweetImage];
-        [self presentViewController:tweetSheet animated:YES completion:nil];
-    }
-    else{
-        UIAlertView *hinweis = [[UIAlertView alloc]initWithTitle:@"Fehler" message:@"Teilen nicht möglich! Bitte Account für Twitter einrichten!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [hinweis show];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Teiler per" delegate:self cancelButtonTitle:@"Abbrechen" destructiveButtonTitle:nil otherButtonTitles:@"Twitter", @"Facebook",nil];
+    [actionSheet showInView:self.view];
+}
 
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+            {
+                SLComposeViewController *tweetSheet = [SLComposeViewController
+                                                       composeViewControllerForServiceType:SLServiceTypeTwitter];
+                [tweetSheet setInitialText:@""];
+                UIGraphicsBeginImageContextWithOptions(mapView.frame.size, NO, 0.0);
+                CGContextRef context = UIGraphicsGetCurrentContext();
+                [[mapView layer] renderInContext:context];
+                UIImage *tweetImage = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                [tweetSheet addImage:tweetImage];
+                [self presentViewController:tweetSheet animated:YES completion:nil];
+            }
+            else{
+                UIAlertView *hinweis = [[UIAlertView alloc]initWithTitle:@"Fehler" message:@"Teilen nicht möglich! Bitte Account für Twitter einrichten!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [hinweis show];
+            }
+            break;
+            
+        case 1:
+            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+                SLComposeViewController *facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                [facebook setInitialText:@""];
+                UIGraphicsBeginImageContextWithOptions(mapView.frame.size, NO, 0.0);
+                CGContextRef context = UIGraphicsGetCurrentContext();
+                [[mapView layer] renderInContext:context];
+                UIImage *fbImage = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                [facebook addImage:fbImage];
+                [self presentViewController:facebook animated:YES completion:nil];
+            }
+            else
+            {
+                UIAlertView *hinweis = [[UIAlertView alloc]initWithTitle:@"Fehler" message:@"Teilen nicht möglich! Bitte Account für Facebook einrichten!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [hinweis show];
+            }
+            break;
+        default:
+            break;
     }
 }
 @end

@@ -11,7 +11,7 @@
 #import <Social/Social.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface TableDetailController : UIViewController <MKMapViewDelegate>
+@interface TableDetailController : UIViewController <MKMapViewDelegate, UIActionSheetDelegate>
 - (IBAction)backToTable:(id)sender;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *mapLoadIndicator;
